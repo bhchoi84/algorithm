@@ -3,6 +3,3 @@ public class Main {
         System.out.println("Hello Baeckjoon world!");
     }
 }
-
-
-e
