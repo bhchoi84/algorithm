@@ -1,5 +1,8 @@
 package 수학.ch0006_피보나치;
 
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
 /**
  *  6
  *
@@ -8,23 +11,20 @@ package 수학.ch0006_피보나치;
  */
 public class Main {
 
-    public int pivonachi(int num) {
-        if(num == 0) {
-            return 0;
-        } else if( num == 1 ) {
-            return 1;
+    public int fibonacci(int num) {
+        if(num<=1) {
+            return num;
         } else {
-            pivonachi(num-1);
+            return fibonacci(num-2) + fibonacci(num-1);
         }
-        return num;
     }
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         Main main = new Main();
-        // 처음  = 0
-        // 두번째 = 1
-        // 세번째는 첫번재 + 두번째
-        // 네번째 = 두번째 + 세번째
-        System.out.println(main.pivonachi(4));
+        int num = Integer.parseInt(sc.next());
+        for( int i=1; i<=num;i++) {
+            System.out.println(main.fibonacci(i));
+        }
     }
 }
