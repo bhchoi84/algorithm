@@ -46,13 +46,24 @@ public class Main {
          * 3        isPrime[3]         true
          *
          * */
-        for(int i=2; i*i<=num; i++) {   // 조건이 4(2배수), 9(3배수), 16(4배수) ... 이렇게 올라가므로
+        for(int i=2, squareNum = i*i; squareNum<=num; i++, squareNum=i*i) {   // 조건이 4(2배수), 9(3배수), 16(4배수) ... 이렇게 올라가므로
             if(isPrime[i]) { // 초기화된 2 ~ 입력값까지는 모두 true
-
+                // * 중요 2, 2+2, 2+2+2 에 대해서 수수 처리
+                // 처음에는 2+2 = 4
+                // j+=i => 초기값은 배수 2라고 가정
+                // 초기값 4
+                // 증가값 2
+                // ==> 4, 6 ,8 .... 입력값보다 작을때 까지 돌면서 소수 = false 처리
+                // j+=i => j: (2+2) + 2 => j+=i  초기값 배수 + i
+                for(int j=squareNum; j<=num; j+=i) {
+                    isPrime[j] = false;
+                }
             }
         }
-
-
-
+        for(int i=0; i<isPrime.length; i++) {
+            if( isPrime[i] == true) {
+                System.out.println(i);
+            }
+        }
     }
 }
