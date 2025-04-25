@@ -1,4 +1,4 @@
-package 에라토스테네스의체;
+package 소수_에라토스테네스의체;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -62,7 +62,7 @@ public class Main {
         }
         for(int i=0; i<isPrime.length; i++) {
             if( isPrime[i] == true) {
-                System.out.println(i);
+                System.out.print(i+" ");
             }
         }
     }
