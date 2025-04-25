@@ -61,7 +61,7 @@ public class Main {
             }
         }
         for(int i=0; i<isPrime.length; i++) {
-            if( isPrime[i] == true) {
+            if(isPrime[i]) {
                 System.out.print(i+" ");
             }
         }
